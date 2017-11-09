@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p v-bind:yy="1+1">kakakak</p>
+        <p v-bind:yy="Math.random()">kakakak</p>
+
+        <!-- v-bind: 简写为  ： -->
+        <img :src="imgPath" alt="">
+
+
+        <h1 :class="color">小样儿</h1>
+    </div>
+</body>
+</html>
+<script src="./vue.js"></script>
+<script>
+    // 实例化
+    var vm = new Vue({
+        data:function () {
+            return {
+                color:'red',  
+                msg:'msg内容',
+                name:1,
+                imgPath:'./img/demo01.jpeg'
+            }
+        }
+    })
+    // 网界面上渲染的位置
+    vm.$mount('#app')
+</script>

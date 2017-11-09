@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-html和v-text灰常相似，前者相当于innerHTML  后者相当于innerText  -->
+        <!-- 而{{}}相当于v-text -->
+        <h1 v-html="msg"></h1>
+
+<!-- {{}}不能识别标签  也叫做插值表达式  也不能在属性值里面写入-->
+        {{msg}}
+    </div>
+</body>
+
+</html>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        data: function () {
+            return {
+                msg: "<i>卡卡卡卡</i>",
+                name: "花里胡哨"
+            }
+        }
+    })
+    // 定义区域相当于选择器
+    vm.$mount("#app");
+</script>

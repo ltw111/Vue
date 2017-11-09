@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" v-model="message">
+    <input type="text" v-model="name">
+    <p v-text="message"></p>
+    <p v-text="name"></p>
+</body>
+</html>
+<script src="./01.js"></script>
+<script>
+    var obj={
+        message:"哈哈",
+        name:"name"
+    }
+    new dataBind({
+        data:function (){
+            return obj;
+        }
+    })
+</script>

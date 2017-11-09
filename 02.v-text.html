@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-text一般用于显示正常的标签input除外 -->
+        <p v-text="msg"></p>
+        <h1 v-text="name"></h1>
+
+        <!-- v-text可用来写js表达式 -->
+        <h1 v-text="1+1"></h1>
+        <h1 v-text="'1'-1"></h1>
+        <h1 v-text="'1'+1"></h1>
+
+
+        <!-- v-text内部还可以写函数 -->
+        <p v-text="Math.random()"></p>
+        <p v-text="typeof JSON.stringify({name:'张三',age:1})"></p>
+        <p v-text="JSON.stringify({name:'张三',age:1})"></p>
+
+
+        <!-- v-text内部不能为dom何bom对象属性 也不能为全局定义的属性既window.属性（alert，lcoation.href）不可以 -->
+
+        <h1 v-text="'name'+1"></h1>
+
+        <!-- 返回值中有name可以得到值 -->
+        <h1 v-text="name+1"></h1>
+    </div>
+</body>
+</html>
+<script src="./vue.js"></script>
+<script>
+    var vm=new Vue({
+        data:function (){
+            return {
+                msg:"啦啦啦",
+                name:999
+            }
+        }
+    })
+    vm.$mount("#app");
+</script>
